@@ -5,7 +5,7 @@ const slides = [
     },
     {
         image: "img/2.jpg",
-        text: "When mom called you a good boy"
+        text: "When mom called you a good girl"
     },
     {
         image: "img/3.jpg",
