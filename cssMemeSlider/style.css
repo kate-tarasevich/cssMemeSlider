@@ -27,15 +27,10 @@ p {
 }
 
 .item {
-    display: none;
-    justify-content: center;
+    justify-content: centser;
     margin-bottom: 2rem;
     flex-direction: column;
     align-items: center;
-}
-
-.item-active {
-    display: block;
 }
 
 img {
