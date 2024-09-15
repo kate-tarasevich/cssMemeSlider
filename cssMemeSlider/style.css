@@ -2,12 +2,14 @@
     box-sizing: border-box;
 }
 body {
-    margin: 0;
+    margin: 0 auto;
+    background-color: #2C3338;
 }
 p {
     margin: 0;
 }
 .container {
+    position: relative;
     display: flex;
     width: 1920px;
     height: 1080px;
@@ -15,6 +17,7 @@ p {
     margin: 0 auto;
     flex-direction: column;
     padding: 20px 160px;
+
 }
 .info {
     display: flex;
@@ -26,15 +29,18 @@ img {
     height: 950px;
     border-radius: 15px;
     object-fit: cover;
+    margin-bottom: 30px;
 }
 .item {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    flex-direction: column;
 }
 p {
     color: antiquewhite;
     font-size: 30px;
+    display: inline;
 }
 .scrollbar {
     display: flex;
@@ -44,9 +50,11 @@ p {
     list-style: none;
     margin: 0;
     padding: 0;
+    position: absolute;
+    right: 165px;
+    bottom: 50px;
 }
 span {
-    position: relative;
     overflow: hidden;
     width: 20px;
     height: 20px;
