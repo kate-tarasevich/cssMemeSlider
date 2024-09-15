@@ -21,16 +21,15 @@ p {
 }
 .slider {
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
-}
-
-.item {
-    justify-content: centser;
+    justify-content: center;
     margin-bottom: 2rem;
     flex-direction: column;
-    align-items: center;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
 }
 
 img {
@@ -50,7 +49,6 @@ p {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
     align-items: center;
     list-style: none;
     margin: 0;
