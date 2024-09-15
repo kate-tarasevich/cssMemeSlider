@@ -15,8 +15,6 @@ p {
     margin: 0 auto;
     flex-direction: column;
     padding: 20px 160px;
-    /* justify-content: center;
-    align-items: center; */
 }
 .info {
     display: flex;
@@ -53,10 +51,18 @@ span {
     width: 20px;
     height: 20px;
     border-radius: 100px;
-    background: blue;
+    background: #2271B1;
     cursor: pointer;
 }
-span:hover {
-    background: #2271B1;
-    transition: 0.6s ease-out;
+.unactive:hover {
+    background: #FFFFFF;
+    transition: 0.4s ease-out;
+}
+.active {
+    background: none;
+    border: 3px solid #2271B1;
+}
+.active:hover {
+    border-color: #FFFFFF;
+    transition: 0.4s ease-out;
 }
