@@ -23,19 +23,30 @@ const controlButtons = document.querySelectorAll(".btn");
 let currentIndex = 0;
 
 function showItem(index) {
-    sliderImage.src = slides[index].image;
-    sliderText.innerHTML = slides[index].text;
+    sliderImage.style.opacity = 0;
+    sliderText.style.opacity = 0;
+
+    setTimeout(() => {
+        sliderImage.src = slides[index].image;
+        sliderText.innerHTML = slides[index].text;
+        sliderImage.style.opacity = 1;
+        sliderText.style.opacity = 1;
+    },400)
+
 
     controlButtons.forEach((btn, i) => {
         btn.classList.toggle("active", i === index);
         btn.classList.toggle("unactive", i !== index);
     });
+
+    currentIndex = index;
 }
 
 controlButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        currentIndex = index;
-        showItem(currentIndex);
+    btn.addEventListener("click", () => {
+        if(index !== currentIndex) {
+            showItem(index);
+        }
     });
 });
 

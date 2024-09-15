@@ -32,6 +32,11 @@ p {
     justify-content: space-between;
 }
 
+img, p {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
 img {
     width: 100rem;
     height: 60rem;
