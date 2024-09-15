@@ -81,7 +81,7 @@ p {
     cursor: pointer;
 }
 
-.btn-wrapper.unactive:hover {
+.unactive:hover {
     background: #FFFFFF;
     transition:  all 0.5s ease-out;
     border: 0.2rem solid #FFFFFF;
@@ -92,7 +92,7 @@ p {
     border: 0.2rem solid #2271B1;
 }
 
-.btn-wrapper.active:hover {
+.active:hover {
     border-color: #FFFFFF;
     transition: all 0.5s ease-out;;
 }
