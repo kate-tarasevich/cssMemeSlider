@@ -4,6 +4,7 @@
 body {
     margin: 0 auto;
     background-color: #2C3338;
+    font-family: Arial, sans-serif;
 }
 p {
     margin: 0;
@@ -19,11 +20,25 @@ p {
     padding: 20px 160px;
 
 }
-.info {
+.slider {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
+
+.item {
+    display: none;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-active {
+    display: block;
+}
+
 img {
     width: 1600px;
     height: 950px;
@@ -31,46 +46,46 @@ img {
     object-fit: cover;
     margin-bottom: 30px;
 }
-.item {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    flex-direction: column;
-}
+
 p {
     color: antiquewhite;
     font-size: 30px;
-    display: inline;
+    margin-top: 20px;
 }
-.scrollbar {
+
+.controls {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 12px;
+    margin-top: 20px;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
     position: absolute;
     right: 165px;
-    bottom: 50px;
+    bottom: 30px;
 }
-span {
-    overflow: hidden;
+
+.btn {
     width: 20px;
     height: 20px;
-    border-radius: 100px;
+    border-radius: 50%;
     background: #2271B1;
     cursor: pointer;
 }
+
 .unactive:hover {
     background: #FFFFFF;
-    transition: 0.4s ease-out;
+    transition:  all 1s ease-out;;
 }
+
 .active {
-    background: none;
+    background-color: #2C3338;
     border: 3px solid #2271B1;
 }
+
 .active:hover {
     border-color: #FFFFFF;
-    transition: 0.4s ease-out;
+    transition:  all 1s ease-out;;
 }
