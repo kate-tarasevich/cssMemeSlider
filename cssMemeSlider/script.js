@@ -19,6 +19,7 @@ const slides = [
 const sliderImage = document.getElementById("slider-image");
 const sliderText = document.getElementById("slider-text");
 const controlButtons = document.querySelectorAll(".btn");
+const controlWrapper = document.querySelectorAll(".btn-wrapper");
 
 let currentIndex = 0;
 
@@ -42,7 +43,7 @@ function showItem(index) {
     currentIndex = index;
 }
 
-controlButtons.forEach((btn, index) => {
+controlWrapper.forEach((btn, index) => {
     btn.addEventListener("click", () => {
         if(index !== currentIndex) {
             showItem(index);

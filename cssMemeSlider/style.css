@@ -53,7 +53,6 @@ p {
 .controls {
     display: flex;
     justify-content: center;
-    gap: 1rem;
     align-items: center;
     list-style: none;
     margin: 0;
@@ -61,6 +60,7 @@ p {
 }
 
 .btn {
+    display: block;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -68,10 +68,18 @@ p {
     cursor: pointer;
     border: 0.2rem solid #2271B1;
 }
+.btn-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
-.unactive:hover {
+.btn-wrapper.unactive:hover {
     background: #FFFFFF;
-    transition:  all 1s ease-out;
+    transition:  all 0.5s ease-out;
     border: 0.2rem solid #FFFFFF;
 }
 
@@ -80,7 +88,7 @@ p {
     border: 0.2rem solid #2271B1;
 }
 
-.active:hover {
+.btn-wrapper.active:hover {
     border-color: #FFFFFF;
-    transition:  all 1s ease-out;;
+    transition: all 0.5s ease-out;;
 }
