@@ -112,8 +112,31 @@ p {
 .active:hover {
     border-color: #FFFFFF;
 }
-
-
+@media screen and (max-width: 900px) {
+    .container {
+        justify-content: flex-start;
+    }
+    img {
+        height: 40rem;
+    }
+    .btn-wrapper {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .bottom {
+        flex-direction: column-reverse;
+    }
+    p {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    img {
+        height: 25rem;
+    }
+}
 @media screen and (max-width: 321px) {
     .container {
         width: 320px;
@@ -134,8 +157,5 @@ p {
         width: 1.5rem;
         height: 1.5rem;
     }
-    .btn-wrapper {
-        width: 3rem;
-        height: 3rem;
-    }
+
 }
