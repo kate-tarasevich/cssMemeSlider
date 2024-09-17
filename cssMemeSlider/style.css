@@ -6,9 +6,16 @@ body {
     padding: 0;
     background-color: #2C3338;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
+
 p {
     margin: 0;
+    color: antiquewhite;
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-align: start;
+
 }
 .container {
     display: flex;
@@ -17,66 +24,92 @@ p {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #2C3338;
     padding: 1rem;
 
 }
 .slider {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     width: 100%;
     max-width: 80rem;
-    overflow: hidden;
-    position: relative;
+    height: 65rem;
+    transition: transform 1s ease;
 }
 .item {
-    display: none;
+    min-width: 100%;
+    flex: 0 0 100%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
+
 
 input[type="radio"] {
     display: none;
 }
-
-input#slide1:checked ~ .item:nth-of-type(1),
-input#slide2:checked ~ .item:nth-of-type(2),
-input#slide3:checked ~ .item:nth-of-type(3),
-input#slide4:checked ~ .item:nth-of-type(4) {
-    display: flex;
+input#slide1:checked ~ .slider .item:nth-of-type(1),
+input#slide2:checked ~ .slider .item:nth-of-type(2),
+input#slide3:checked ~ .slider .item:nth-of-type(3),
+input#slide4:checked ~ .slider .item:nth-of-type(4) {
     opacity: 1;
+    visibility: visible;
+}
+input#slide1:checked ~ .slider {
+    transform: translateX(0%);
 }
 
+input#slide2:checked ~ .slider {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .slider {
+    transform: translateX(-200%);
+}
+
+input#slide4:checked ~ .slider {
+    transform: translateX(-300%);
+}
+
+.btn.active {
+    background-color: #2C3338;
+    border-color: #2271B1;
+}
+.btn-wrapper:hover .active {
+    border-color: #FFFFFF;
+}
+.btn-wrapper:hover .unactive {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+.btn-wrapper:active .unactive {
+    background-color: #a8d4f7;
+    border-color: #a8d4f7;
+}
 
 .bottom {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    color: antiquewhite;
+    width: 100%;
 }
 
 img {
     width: 100%;
     max-width: 100rem;
-    height: 60rem;
+    height: 50rem;
     border-radius: 2%;
     object-fit: cover;
-    transition: opacity 0.4s ease-in-out;
-}
-
-p {
-    color: antiquewhite;
-    font-size: 1.5rem;
-    margin-top: 1rem;
 }
 
 .controls {
     display: flex;
     justify-content: center;
-    gap: 1rem;
     margin-top: 1.5rem;
 }
 
@@ -88,6 +121,7 @@ p {
     background: #2271B1;
     cursor: pointer;
     border: 0.2rem solid #2271B1;
+    transition: all 0.5s;
 }
 
 .btn-wrapper {
@@ -99,19 +133,7 @@ p {
     cursor: pointer;
 }
 
-.unactive:hover {
-    background: #FFFFFF;
-    border: 0.2rem solid #FFFFFF;
-}
 
-.active {
-    background-color: #2C3338;
-    border: 0.2rem solid #2271B1;
-}
-
-.active:hover {
-    border-color: #FFFFFF;
-}
 @media screen and (max-width: 900px) {
     .container {
         justify-content: flex-start;
@@ -130,11 +152,21 @@ p {
     }
     p {
         font-size: 2rem;
+        width: 22rem;
     }
 }
 @media screen and (max-width: 500px) {
     img {
         height: 25rem;
+    }
+    .item {
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width: 350px) {
+    p {
+        font-size: 1.5rem;
+        width: 15rem;
     }
 }
 @media screen and (max-width: 321px) {
@@ -146,9 +178,7 @@ p {
         width: 18rem;
         height: 20rem;
     }
-    p {
-        font-size: 1.5rem;
-    }
+
     .bottom {
         flex-direction: column-reverse;
         gap: 2rem;
